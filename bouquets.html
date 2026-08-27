@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bouquet Studio · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/journal.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“grown just for you ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">💐 bouquet studio</span>
+      <h1>build yourself a little bouquet</h1>
+      <p>pick flowers, arrange them your way, and write a little note to go with it.</p>
+    </header>
+
+    <section class="section">
+      <div class="journal-layout">
+        <div class="paper-card" style="min-height:520px;display:flex;flex-direction:column;">
+          <div id="bouquetCanvasWrap" class="creative-canvas" style="flex:1;"></div>
+          <div class="journal-toolbar">
+            <label for="wrappingSelect" style="margin:0;">wrapping</label>
+            <select id="wrappingSelect" style="width:auto;margin-bottom:0;">
+              <option value="linear-gradient(160deg,#fdf3f6,#f8dbe2)">blush paper</option>
+              <option value="linear-gradient(160deg,#f3ecfb,#e3d8f6)">lilac paper</option>
+              <option value="linear-gradient(160deg,#fffefb,#f3e2b8)">kraft &amp; gold</option>
+              <option value="linear-gradient(160deg,#eaf7ee,#d9f0e2)">sage green</option>
+            </select>
+            <button class="btn btn-sm btn-outline" id="clearCanvasBtn" type="button">clear canvas</button>
+            <button class="btn btn-sm btn-soft" id="exportImageBtn" type="button">⬇ export as image</button>
+          </div>
+        </div>
+
+        <aside class="sticker-drawer-panel">
+          <div class="sticker-drawer">
+            <h3 style="margin:0;">🌸 flowers</h3>
+            <div class="palette-grid" id="flowerPalette"></div>
+            <h3 style="margin:.4rem 0 0;">🎀 decorations</h3>
+            <div class="palette-grid" id="decorPalette"></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="paper-card" style="margin-top:1.2rem;">
+        <label for="bouquetNote">a little note</label>
+        <input type="text" id="bouquetNote" placeholder="for someone, or for future me…">
+        <label for="bouquetLetter">write a little letter…</label>
+        <textarea id="bouquetLetter" placeholder="dear me, this bouquet is for the days when…"></textarea>
+        <button class="btn btn-primary" id="saveBouquetBtn">💾 save this bouquet</button>
+      </div>
+    </section>
+
+    <hr class="dashed">
+
+    <section class="section">
+      <div class="section-title-row"><h2>saved bouquets</h2></div>
+      <div class="grid grid-3" id="bouquetGallery"></div>
+      <p class="empty-state" id="bouquetEmpty" style="display:none;">no bouquets yet — build your first one above 💐</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/stickers.js"></script>
+<script src="js/bouquet.js"></script>
+</body>
+</html>

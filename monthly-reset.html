@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Reset · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“new page, new month ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">🌙 monthly reset</span>
+      <h1>a little reflection</h1>
+    </header>
+
+    <section class="section paper-card">
+      <label for="resetMonth">which month is this for?</label>
+      <input type="month" id="resetMonth" style="max-width:220px;">
+      <button class="btn btn-sm btn-outline" id="loadMonthBtn">load / start this month</button>
+    </section>
+
+    <section class="section paper-card" id="resetForm" style="display:none;">
+      <div id="resetQuestions"></div>
+      <button class="btn btn-primary" id="saveResetBtn">save this month's reset</button>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>past resets</h2></div>
+      <div class="grid grid-2" id="resetArchive"></div>
+      <p class="empty-state" id="resetEmpty" style="display:none;">no monthly resets saved yet 🌙</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/monthly-reset.js"></script>
+</body>
+</html>

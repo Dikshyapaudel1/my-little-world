@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Wall · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“moments worth keeping ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">📸 memory wall</span>
+      <h1>little moments, pinned up</h1>
+      <p>a scrapbook of the things worth remembering.</p>
+    </header>
+
+    <section class="section paper-card">
+      <h3 style="margin-top:0;">add a memory</h3>
+      <div class="grid grid-2">
+        <div>
+          <label for="memImage">photo</label>
+          <input type="file" id="memImage" accept="image/*">
+          <label for="memTitle">title</label>
+          <input type="text" id="memTitle" placeholder="e.g. golden hour walk">
+          <label for="memDate">date</label>
+          <input type="date" id="memDate">
+        </div>
+        <div>
+          <label for="memCaption">caption</label>
+          <textarea id="memCaption" placeholder="what made this moment special?" style="min-height:70px;"></textarea>
+          <label for="memPeople">people</label>
+          <input type="text" id="memPeople" placeholder="who was there?">
+          <label for="memLocation">location</label>
+          <input type="text" id="memLocation" placeholder="where was this?">
+          <label for="memTags">tags</label>
+          <input type="text" id="memTags" placeholder="comma separated">
+        </div>
+      </div>
+      <button class="btn btn-primary" id="addMemoryBtn">📌 pin this memory</button>
+    </section>
+
+    <section class="section">
+      <div class="archive-toolbar paper-card">
+        <div style="flex:1;min-width:200px;">
+          <label for="memSearch">search</label>
+          <input type="text" id="memSearch" placeholder="search title, caption, tags…">
+        </div>
+      </div>
+      <div class="grid grid-3" id="memoryWall"></div>
+      <p class="empty-state" id="memoryEmpty" style="display:none;">no memories pinned yet — add your first one above 📸</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/memories.js"></script>
+</body>
+</html>

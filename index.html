@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dikshya's World ♡</title>
+<meta name="description" content="a tiny place for my thoughts, dreams, memories and becoming.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list" id="sidebarNavList"></ul>
+    </nav>
+    <div class="sidebar-foot">
+      <p>“becoming, slowly ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">
+        ⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content" id="homeDashboard">
+    <header class="page-header">
+      <h1>Welcome to Dikshya's World <span class="accent">♡</span></h1>
+      <p class="rotating-line" id="rotatingMessage"></p>
+    </header>
+
+    <section class="section scrapbook-hero">
+      <span class="hero-doodle" style="top:12px; left:18px;">✿</span>
+      <span class="hero-doodle" style="bottom:14px; right:24px;">☁︎</span>
+      <span class="hero-doodle" style="top:20px; right:16%;">✦</span>
+      <div class="grid grid-2" style="align-items:center;">
+        <div>
+          <span class="eyebrow" id="todayDate"></span>
+          <h2>a tiny place for my thoughts,<br>dreams, memories and becoming.</h2>
+          <p>this is my private-feeling corner of the internet — for dumping thoughts, saving memories, collecting songs, and slowly becoming whoever I'm meant to be.</p>
+        </div>
+        <div class="affirmation-spotlight">
+          <p id="homeAffirmation">“…”</p>
+          <button class="btn btn-sm btn-primary" id="anotherAffirmationBtn">another one ♡</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>today I am…</h2></div>
+      <div class="paper-card">
+        <div class="mood-row" id="homeMoodPicker"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>a little glance at things</h2></div>
+      <div class="grid grid-3">
+        <div class="paper-card tilt-1">
+          <span class="washi pink" style="left:20px;"></span>
+          <h3>🌱 100-day challenge</h3>
+          <p id="stat-challenge">—</p>
+          <a href="challenge.html" class="btn btn-sm btn-outline">continue</a>
+        </div>
+        <div class="paper-card tilt-2">
+          <span class="washi purple" style="right:20px;"></span>
+          <h3>📖 journal entries</h3>
+          <p><span id="stat-journal-count">0</span> little pages so far</p>
+          <div id="stat-journal-latest" class="entry-snippet"></div>
+          <a href="journal.html" class="btn btn-sm btn-outline">open journal</a>
+        </div>
+        <div class="paper-card tilt-3">
+          <span class="washi gold" style="left:30px;"></span>
+          <h3>🎵 currently playing</h3>
+          <p id="stat-song">—</p>
+          <a href="music.html" class="btn btn-sm btn-outline">my soundtrack</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>quick things to do</h2></div>
+      <div class="quick-actions">
+        <button class="btn btn-primary" data-goto="journal.html">📝 Write a Dump</button>
+        <button class="btn btn-soft" data-goto="memories.html">📸 Add a Memory</button>
+        <button class="btn btn-soft" data-goto="challenge.html">🌱 Continue My Challenge</button>
+        <button class="btn btn-soft" data-goto="letters.html">💌 Write a Letter</button>
+        <button class="btn btn-soft" data-goto="bouquets.html">💐 Create a Bouquet</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

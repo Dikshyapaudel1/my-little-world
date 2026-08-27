@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Days · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“showing up, one day at a time ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">🌱 becoming me</span>
+      <h1 id="challengeName">100 Days of Becoming Me</h1>
+      <div class="quick-actions">
+        <input type="text" id="challengeNameInput" placeholder="rename your challenge…" style="max-width:280px;margin-bottom:0;">
+        <button class="btn btn-sm btn-outline" id="renameBtn">rename</button>
+        <button class="btn btn-sm btn-danger" id="resetChallengeBtn">restart challenge</button>
+      </div>
+    </header>
+
+    <section class="section paper-card">
+      <div class="section-title-row">
+        <h3 id="progressLabel" style="margin:0;">Day 0 / 100</h3>
+        <span id="daysLeftLabel" class="tag">100 days left</span>
+      </div>
+      <div class="progress-bar-track"><div class="progress-bar-fill" id="progressFill" style="width:0%;"></div></div>
+    </section>
+
+    <section class="section">
+      <div class="day-grid" id="dayGrid"></div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<div class="modal-backdrop hidden" id="dayModalBackdrop">
+  <div class="modal">
+    <button class="btn btn-sm btn-icon modal-close" id="closeDayModal" aria-label="Close">✕</button>
+    <h3 id="dayModalTitle">Day 1</h3>
+    <label for="dayHabit">habit / task</label>
+    <input type="text" id="dayHabit" placeholder="e.g. drink water, journal, walk">
+    <label for="dayNote">note</label>
+    <textarea id="dayNote" placeholder="how did today go?"></textarea>
+    <label for="dayMood">mood</label>
+    <div class="mood-row" id="dayModalMood"></div>
+    <div class="quick-actions">
+      <button class="btn btn-primary" id="saveDayBtn">save day</button>
+      <button class="btn btn-soft" id="toggleDoneBtn">mark complete</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/challenge.js"></script>
+</body>
+</html>

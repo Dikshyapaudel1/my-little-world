@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highest Self · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“becoming more myself ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">✨ my highest self</span>
+      <h1>who I'm becoming</h1>
+    </header>
+
+    <p class="big-quote">“I'm not trying to become someone else.<br>I'm becoming more myself.”</p>
+
+    <section class="section paper-card">
+      <h2>who I am becoming</h2>
+      <textarea id="becomingText" placeholder="free write about the person you're growing into…" style="min-height:140px;"></textarea>
+      <button class="btn btn-sm btn-primary" id="saveBecomingBtn">save</button>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>my values</h2></div>
+      <div id="valuesList" class="grid grid-3"></div>
+      <div class="quick-actions"><input type="text" id="valueInput" placeholder="a value that matters to me…" style="max-width:260px;"><button class="btn btn-sm btn-outline" id="addValueBtn">add value</button></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>things I want to learn</h2></div>
+      <div id="learnList" class="grid grid-2"></div>
+      <div class="quick-actions"><input type="text" id="learnInput" placeholder="something I want to learn…" style="max-width:260px;"><button class="btn btn-sm btn-outline" id="addLearnBtn">add</button></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>things I want to experience</h2></div>
+      <div id="bucketList" class="grid grid-2"></div>
+      <div class="quick-actions"><input type="text" id="bucketInput" placeholder="something for my bucket list…" style="max-width:260px;"><button class="btn btn-sm btn-outline" id="addBucketBtn">add</button></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>habits I'm building</h2></div>
+      <div id="habitsList" class="grid grid-3"></div>
+      <div class="quick-actions"><input type="text" id="habitInput" placeholder="a habit I'm building…" style="max-width:260px;"><button class="btn btn-sm btn-outline" id="addHabitBtn">add habit</button></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>things I'm proud of</h2></div>
+      <div id="proudList" class="grid grid-2"></div>
+      <div class="quick-actions"><input type="text" id="proudInput" placeholder="something I'm proud of…" style="max-width:260px;"><button class="btn btn-sm btn-outline" id="addProudBtn">add</button></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>my future life</h2></div>
+      <p style="color:var(--plum-soft);">a little vision board — add short notes about the life you're imagining.</p>
+      <div class="vision-board" id="visionBoard"></div>
+      <div class="quick-actions"><input type="text" id="visionInput" placeholder="a piece of the life I'm imagining…" style="max-width:300px;"><button class="btn btn-sm btn-outline" id="addVisionBtn">pin to board</button></div>
+    </section>
+
+    <section class="section paper-card">
+      <h2>promises to myself</h2>
+      <div id="promisesList"></div>
+      <div class="quick-actions"><input type="text" id="promiseInput" placeholder="a promise I want to keep to myself…" style="max-width:300px;"><button class="btn btn-sm btn-outline" id="addPromiseBtn">add promise</button></div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/highest-self.js"></script>
+</body>
+</html>

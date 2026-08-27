@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Joys Jar · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“tiny good things ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">🫙 little joys jar</span>
+      <h1>tiny moments worth keeping</h1>
+    </header>
+
+    <section class="section">
+      <div class="jar-wrap">
+        <div class="jar-lid"></div>
+        <div class="jar" id="jarVisual"></div>
+        <p style="color:var(--plum-soft);font-size:.85rem;" id="jarCount">0 little joys saved</p>
+        <div class="quick-actions">
+          <input type="text" id="joyInput" placeholder="a tiny good moment…" style="max-width:280px;">
+          <button class="btn btn-primary" id="addJoyBtn">drop it in ♡</button>
+        </div>
+        <button class="btn btn-soft" id="pickJoyBtn">🎁 pick one</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>all my little joys</h2></div>
+      <div class="grid grid-3" id="joyList"></div>
+      <p class="empty-state" id="joyEmpty" style="display:none;">the jar is empty — add your first little joy above 🫙</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<div class="modal-backdrop hidden" id="joyModalBackdrop">
+  <div class="modal">
+    <button class="btn btn-sm btn-icon modal-close" id="closeJoyModal" aria-label="Close">✕</button>
+    <p class="big-quote" id="joyModalText">“…”</p>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/joys.js"></script>
+</body>
+</html>

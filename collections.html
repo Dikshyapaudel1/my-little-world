@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“a shelf for my favorite things ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">🎀 my collections</span>
+      <h1>a shelf of favorite little things</h1>
+    </header>
+
+    <section class="section paper-card">
+      <h3 style="margin-top:0;">start a new collection</h3>
+      <div class="quick-actions">
+        <input type="text" id="newCollectionInput" placeholder="e.g. favorite snacks, things I want to buy…" style="max-width:320px;">
+        <button class="btn btn-outline" id="addCollectionBtn">create collection</button>
+      </div>
+      <p style="font-size:.8rem;color:var(--plum-soft);">a few starter shelves are already here — quotes, movies, books, snacks, outfits, places, phrases, and obsessions.</p>
+    </section>
+
+    <section class="section" id="collectionsWrap"></section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/collections.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letters to Myself · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“for future me ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">💌 letters to myself</span>
+      <h1>little envelopes, waiting</h1>
+      <p>write something for a future version of you to find.</p>
+    </header>
+
+    <section class="section">
+      <button class="btn btn-primary" id="newLetterBtn">✍️ write a new letter</button>
+    </section>
+
+    <section class="section">
+      <div class="envelope-grid" id="envelopeGrid"></div>
+      <p class="empty-state" id="letterEmpty" style="display:none;">no letters yet — write the first one to yourself 💌</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<div class="modal-backdrop hidden" id="letterModalBackdrop">
+  <div class="modal">
+    <button class="btn btn-sm btn-icon modal-close" id="closeLetterModal" aria-label="Close">✕</button>
+    <div id="letterFormView">
+      <h3>write a letter</h3>
+      <label for="letterCategory">open when…</label>
+      <select id="letterCategory">
+        <option>Open when I need motivation</option>
+        <option>Open when I'm proud of myself</option>
+        <option>Open when I feel lost</option>
+        <option>Open when I achieve something</option>
+        <option>Open on my birthday</option>
+        <option>Open one year from now</option>
+        <option>Open when I need to remember who I am</option>
+      </select>
+      <label for="letterTitle">title</label>
+      <input type="text" id="letterTitle" placeholder="a little title…">
+      <label for="letterRecipient">to</label>
+      <input type="text" id="letterRecipient" value="me" placeholder="me">
+      <label for="letterBody">your letter</label>
+      <textarea id="letterBody" placeholder="dear me…"></textarea>
+      <label for="letterImageInput">optional photo</label>
+      <input type="file" id="letterImageInput" accept="image/*">
+      <button class="btn btn-primary" id="saveLetterBtn">seal &amp; save</button>
+    </div>
+    <div id="letterReadView" style="display:none;">
+      <span class="eyebrow" id="readCategory"></span>
+      <h3 id="readTitle"></h3>
+      <p style="font-size:.85rem;color:var(--plum-soft);" id="readMeta"></p>
+      <div id="readImageWrap"></div>
+      <p id="readBody" style="white-space:pre-wrap;"></p>
+      <div class="quick-actions">
+        <button class="btn btn-danger" id="deleteLetterBtn">delete letter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/letters.js"></script>
+</body>
+</html>

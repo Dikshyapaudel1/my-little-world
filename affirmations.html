@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affirmation Garden · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“grow gently ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">🌷 affirmation garden</span>
+      <h1>things I'm learning to believe</h1>
+      <p>plant a little affirmation, watch your garden grow.</p>
+    </header>
+
+    <section class="section">
+      <div class="paper-card">
+        <label for="newAffirmation">plant a new affirmation</label>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+          <input type="text" id="newAffirmation" placeholder="I am allowed to…" style="flex:1;min-width:220px;margin-bottom:0;">
+          <button class="btn btn-primary" id="addAffirmationBtn">🌱 plant it</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="affirmation-spotlight">
+        <p id="spotlightText">“…”</p>
+        <button class="btn btn-sm btn-primary" id="giveMeOneBtn">give me an affirmation ♡</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row"><h2>my garden</h2></div>
+      <div class="garden" id="gardenGrid"></div>
+      <p class="empty-state" id="gardenEmpty" style="display:none;">plant your first affirmation above to start your garden 🌱</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<div class="modal-backdrop hidden" id="flowerModalBackdrop">
+  <div class="modal">
+    <button class="btn btn-sm btn-icon modal-close" id="closeFlowerModal" aria-label="Close">✕</button>
+    <p class="big-quote" id="flowerModalText">“…”</p>
+    <div class="quick-actions" style="justify-content:center;">
+      <button class="btn btn-soft" id="favoriteFlowerBtn">★ favorite</button>
+      <button class="btn btn-outline" id="editFlowerBtn">edit</button>
+      <button class="btn btn-danger" id="deleteFlowerBtn">delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/affirmations.js"></script>
+</body>
+</html>

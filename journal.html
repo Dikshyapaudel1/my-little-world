@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal · Dikshya's World</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/journal.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="nav-overlay hidden" id="navOverlay"></div>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Dikshya's World<span>a digital sanctuary</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list" id="sidebarNavList"></ul></nav>
+    <div class="sidebar-foot">
+      <p>“let it all out ♡”</p>
+      <button class="btn btn-sm btn-soft" id="exportWorldBtn" style="width:100%;margin-bottom:.5rem;">⬇ Export My World</button>
+      <label class="btn btn-sm btn-outline" style="width:100%;text-align:center;display:block;cursor:pointer;">
+        ⬆ Import My World
+        <input type="file" id="importWorldInput" accept="application/json" class="sr-only">
+      </label>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="page-header">
+      <span class="eyebrow">the dump book</span>
+      <h1>📖 Journal</h1>
+      <p>a page for whatever's on your mind — today's dump, dear diary, random thoughts at 2am.</p>
+    </header>
+
+    <section class="section">
+      <div class="journal-layout">
+        <div class="notebook-page">
+          <input type="hidden" id="editingEntryId">
+          <div class="journal-meta-row">
+            <input type="text" id="entryTitle" class="journal-title-input" placeholder="today's dump…">
+          </div>
+          <div class="journal-date-mood">
+            <label for="entryDate" class="sr-only">Date</label>
+            <input type="date" id="entryDate" style="width:auto;margin-bottom:0;">
+            <div class="mood-row" id="entryMoodPicker"></div>
+          </div>
+
+          <div style="position:relative;">
+            <textarea id="entryText" class="journal-textarea" placeholder="dear diary… today felt like…"></textarea>
+            <div class="journal-canvas-overlay" id="journalCanvas"></div>
+          </div>
+
+          <div id="entryImagePreviewWrap"></div>
+
+          <div class="journal-toolbar">
+            <label class="btn btn-sm btn-outline" style="cursor:pointer;">
+              🖼 add photo
+              <input type="file" id="entryImageInput" accept="image/*" class="sr-only">
+            </label>
+            <button class="btn btn-sm btn-outline" id="removeEntryImageBtn" type="button" style="display:none;">remove photo</button>
+            <input type="text" id="entryTags" placeholder="tags (comma separated)" style="max-width:220px;margin-bottom:0;">
+          </div>
+
+          <div class="quick-actions">
+            <button class="btn btn-primary" id="saveEntryBtn">💾 save entry</button>
+            <button class="btn btn-outline" id="cancelEditBtn" style="display:none;">cancel editing</button>
+          </div>
+        </div>
+
+        <aside class="sticker-drawer-panel">
+          <div class="sticker-drawer">
+            <h3 style="margin:0;">🎀 sticker drawer</h3>
+            <p style="font-size:.8rem;color:var(--plum-soft);margin:0;">drag onto the page, then resize with the corner dot or rotate with the buttons.</p>
+            <label class="btn btn-sm btn-soft" style="cursor:pointer;text-align:center;">
+              ⬆ upload sticker
+              <input type="file" accept="image/png,image/webp" class="sticker-upload-input sr-only">
+            </label>
+            <div class="sticker-shelf"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <hr class="dashed">
+
+    <section class="section">
+      <div class="section-title-row"><h2>your archive</h2></div>
+      <div class="archive-toolbar paper-card">
+        <div>
+          <label for="searchEntries">search</label>
+          <input type="text" id="searchEntries" placeholder="search title or text…">
+        </div>
+        <div>
+          <label for="filterMood">mood</label>
+          <select id="filterMood"><option value="">any</option></select>
+        </div>
+        <div>
+          <label for="filterTag">tag</label>
+          <input type="text" id="filterTag" placeholder="e.g. gratitude">
+        </div>
+        <div>
+          <label for="filterDate">date</label>
+          <input type="date" id="filterDate">
+        </div>
+        <div>
+          <button class="btn btn-sm btn-outline" id="clearFiltersBtn" type="button">clear filters</button>
+        </div>
+        <div style="margin-left:auto;">
+          <button class="btn btn-sm btn-soft" id="exportJournalBtn" type="button">export journal only</button>
+        </div>
+      </div>
+
+      <div class="entry-archive" id="entryArchive"></div>
+      <p class="empty-state" id="archiveEmptyState" style="display:none;">no pages here yet — write your first dump above ♡</p>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav" id="bottomNavList" aria-label="Mobile navigation"></nav>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/stickers.js"></script>
+<script src="js/journal.js"></script>
+</body>
+</html>
